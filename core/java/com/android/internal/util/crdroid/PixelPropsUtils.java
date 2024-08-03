@@ -458,12 +458,4 @@ public class PixelPropsUtils {
                         .anyMatch(elem -> elem.getClassName().toLowerCase()
                             .contains("droidguard"));
     }
-
-    public static void onEngineGetCertificateChain() {
-        // Check stack for SafetyNet or Play Integrity
-        if ((isCallerSafetyNet() || sIsFinsky) && !sIsExcluded) {
-            Log.i(TAG, "Blocked key attestation");
-            throw new UnsupportedOperationException();
-        }
-    }
 }
